@@ -6,9 +6,19 @@
 
 - se crea el proyecto independiente `TpvReactGarazi`
 - se inicializa Git dentro de su propia carpeta en `htdocs`
-- se prepara la base técnica con React + Vite
-- se añade la documentación inicial del trabajo
+- se prepara la base tecnica con React + Vite
+- se a�ade la documentacion inicial del trabajo
 
-## Próximos registros
+## 2026-04-08
 
-Este documento recogerá cada fase importante del desarrollo del TPV para dejar constancia del trabajo realizado en el tiempo.
+### Integracion visual de la maqueta
+
+- se revisa el material de referencia entregado: `tpv.html`, `App.css` y `assets.zip`
+- se traslada la estructura principal del HTML a `App.jsx` adaptandola a JSX
+- se reutiliza y adapta el CSS base para mantener la misma apariencia del TPV
+- se incorporan al proyecto las imagenes de productos en `src/assets`
+- se deja construida la interfaz visual del TPV en React como base para la siguiente fase funcional
+
+## Proximos registros
+
+Este documento recogera cada fase importante del desarrollo del TPV para dejar constancia del trabajo realizado en el tiempo.
