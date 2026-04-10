@@ -1,4 +1,4 @@
-# Seguimiento del trabajo
+﻿# Seguimiento del trabajo
 
 ## 2026-04-07
 
@@ -7,7 +7,7 @@
 - se crea el proyecto independiente `TpvReactGarazi`
 - se inicializa Git dentro de su propia carpeta en `htdocs`
 - se prepara la base tecnica con React + Vite
-- se a�ade la documentacion inicial del trabajo
+- se añade la documentacion inicial del trabajo
 
 ## 2026-04-08
 
@@ -28,6 +28,15 @@
 - se extrae la tarjeta de producto a un componente reutilizable
 - se mueve el listado de productos a un archivo de datos independiente para preparar mejor la siguiente fase funcional
 - se mantiene la misma apariencia visual mientras se mejora la estructura interna del proyecto
+
+### Implementacion de la logica del TPV
+
+- se conecta el input superior con la seleccion de productos
+- se implementa el carrito con lineas reales de productos seleccionados
+- se calculan de forma automatica el subtotal, el descuento y el total
+- se añaden los cupones `SAVE10`, `SAVE20` y `VIP`
+- se implementa la accion de `Cobrar / Reset` para reiniciar la compra
+- se mantiene la apariencia visual original mientras la interfaz pasa a ser funcional
 
 ## Proximos registros
 

@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   font-family: Arial, Helvetica, sans-serif;
   color: #111827;
   background: #f3f4f6;
@@ -118,10 +118,42 @@ input {
 .cart-item {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 8px;
   background: #f9fafb;
   margin-bottom: 6px;
   border-radius: 6px;
+}
+
+.cart-empty {
+  margin: 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.cart-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cart-item-name,
+.cart-item-meta,
+.cart-item-total {
+  margin: 0;
+}
+
+.cart-item-name {
+  font-weight: 600;
+}
+
+.cart-item-meta {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.cart-item-total {
+  font-weight: 600;
 }
 
 .totals {
@@ -153,6 +185,14 @@ input {
 .coupon-area input,
 .coupon-area button {
   padding: 6px;
+}
+
+.coupon-feedback {
+  min-height: 21px;
+  margin: 8px 0 0;
+  color: #4b5563;
+  font-size: 13px;
+  line-height: 1.4;
 }
 
 .checkout,
