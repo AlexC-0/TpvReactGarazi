@@ -13,11 +13,15 @@ function formatCurrency(value) {
   return `€${value.toFixed(2)}`;
 }
 
-function normalizeAmount(value) {
+function normalizeAmount(product, value) {
   const parsedValue = Number.parseFloat(value);
 
   if (Number.isNaN(parsedValue) || parsedValue <= 0) {
     return 1;
+  }
+
+  if (product.measurement === 'unit') {
+    return Math.max(1, Math.round(parsedValue));
   }
 
   return parsedValue;
@@ -51,7 +55,7 @@ function App() {
   };
 
   const handleProductSelect = (product) => {
-    const amount = normalizeAmount(quantityValue);
+    const amount = normalizeAmount(product, quantityValue);
     const newItem = {
       id: `${product.id}-${Date.now()}-${Math.random().toString(16).slice(2, 8)}`,
       name: product.name,
@@ -60,11 +64,18 @@ function App() {
     };
 
     setCartItems((currentItems) => [...currentItems, newItem]);
+    setQuantityValue(product.measurement === 'unit' ? `${Math.max(1, Math.round(amount))}` : `${amount}`);
     setStatusMessage(`${product.name} se ha añadido al carrito.`);
   };
 
   const handleApplyCoupon = () => {
     const normalizedCoupon = couponCode.trim().toUpperCase();
+
+    if (cartItems.length === 0) {
+      setDiscountRate(0);
+      setStatusMessage('Debes añadir productos antes de aplicar un cupon.');
+      return;
+    }
 
     if (!normalizedCoupon) {
       setDiscountRate(0);
@@ -84,6 +95,11 @@ function App() {
   };
 
   const handleReset = () => {
+    if (cartItems.length === 0) {
+      setStatusMessage('El TPV ya esta vacio y listo para una nueva compra.');
+      return;
+    }
+
     setCartItems([]);
     setCouponCode('');
     setDiscountRate(0);

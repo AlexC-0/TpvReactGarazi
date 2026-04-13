@@ -38,6 +38,16 @@
 - se implementa la accion de `Cobrar / Reset` para reiniciar la compra
 - se mantiene la apariencia visual original mientras la interfaz pasa a ser funcional
 
+## 2026-04-13
+
+### Revision y pulido final del TPV
+
+- se revisa el comportamiento general del TPV para reforzar la consistencia de la entrega
+- se ajusta el tratamiento de cantidades para que los productos por unidad se añadan con valores enteros
+- se mejora la respuesta del sistema ante entradas invalidas y acciones sin productos en carrito
+- se refuerzan los mensajes de estado para que el uso del TPV resulte mas claro
+- se valida de nuevo el proyecto para dejar esta fase cerrada y estable
+
 ## Proximos registros
 
 Este documento recogera cada fase importante del desarrollo del TPV para dejar constancia del trabajo realizado en el tiempo.
