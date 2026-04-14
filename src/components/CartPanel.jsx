@@ -14,11 +14,11 @@ function CartPanel({
 }) {
   return (
     <div className="cart-panel">
-      <h2>Carrito</h2>
+      <h2>🧾 Carrito</h2>
 
       <div className="cart-items">
         {cartItems.length === 0 ? (
-          <p className="cart-empty">Todavia no hay productos seleccionados.</p>
+          <p className="cart-empty">Todavía no hay productos seleccionados.</p>
         ) : (
           cartItems.map((item) => <CartItem key={item.id} item={item} formatCurrency={formatCurrency} />)
         )}
@@ -40,15 +40,15 @@ function CartPanel({
       </div>
 
       <div className="coupon-area">
-        <input type="text" placeholder="Codigo de cupon" value={couponCode} onChange={onCouponChange} />
+        <input type="text" placeholder="Código de cupón" value={couponCode} onChange={onCouponChange} />
         <button type="button" onClick={onApplyCoupon}>
-          Aplicar Cupon
+          Aplicar Cupón
         </button>
       </div>
       <p className="coupon-feedback">{statusMessage}</p>
 
       <button type="button" className="checkout" onClick={onReset}>
-        Cobrar / Reset
+        💳 Cobrar / Reset
       </button>
     </div>
   );

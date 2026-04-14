@@ -48,6 +48,15 @@
 - se refuerzan los mensajes de estado para que el uso del TPV resulte mas claro
 - se valida de nuevo el proyecto para dejar esta fase cerrada y estable
 
+## 2026-04-14
+
+### Ajuste final de fidelidad respecto a la maqueta
+
+- se revisan textos y etiquetas para acercarlos mas al documento original
+- se restauran detalles visibles de presentacion como iconos y textos con tildes
+- se afinan nombres de productos y elementos del carrito para que la interfaz resulte mas fiel a la maqueta base
+- se mantiene intacta la logica ya implementada mientras se remata la presentacion final
+
 ## Proximos registros
 
 Este documento recogera cada fase importante del desarrollo del TPV para dejar constancia del trabajo realizado en el tiempo.

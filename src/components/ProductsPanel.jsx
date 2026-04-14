@@ -3,7 +3,7 @@
 function ProductsPanel({ products, quantityValue, onQuantityChange, onProductSelect }) {
   return (
     <div className="products-panel">
-      <h1>Punto de Venta</h1>
+      <h1>🛒 Punto de Venta</h1>
 
       <div className="weight-input">
         <label htmlFor="peso">Peso (kg)</label>

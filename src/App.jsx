@@ -44,7 +44,7 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
   const [couponCode, setCouponCode] = useState('');
   const [discountRate, setDiscountRate] = useState(0);
-  const [statusMessage, setStatusMessage] = useState('Introduce un cupon y pulsa el boton para aplicarlo.');
+  const [statusMessage, setStatusMessage] = useState('Introduce un cupón y pulsa el botón para aplicarlo.');
 
   const subtotal = cartItems.reduce((sum, item) => sum + item.total, 0);
   const discount = subtotal * discountRate;
@@ -73,30 +73,30 @@ function App() {
 
     if (cartItems.length === 0) {
       setDiscountRate(0);
-      setStatusMessage('Debes añadir productos antes de aplicar un cupon.');
+      setStatusMessage('Debes añadir productos antes de aplicar un cupón.');
       return;
     }
 
     if (!normalizedCoupon) {
       setDiscountRate(0);
-      setStatusMessage('Escribe un codigo de cupon antes de aplicarlo.');
+      setStatusMessage('Escribe un código de cupón antes de aplicarlo.');
       return;
     }
 
     if (!Object.prototype.hasOwnProperty.call(coupons, normalizedCoupon)) {
       setDiscountRate(0);
-      setStatusMessage('El codigo introducido no es valido.');
+      setStatusMessage('El código introducido no es válido.');
       return;
     }
 
     setCouponCode(normalizedCoupon);
     setDiscountRate(coupons[normalizedCoupon]);
-    setStatusMessage(`Cupon ${normalizedCoupon} aplicado correctamente.`);
+    setStatusMessage(`Cupón ${normalizedCoupon} aplicado correctamente.`);
   };
 
   const handleReset = () => {
     if (cartItems.length === 0) {
-      setStatusMessage('El TPV ya esta vacio y listo para una nueva compra.');
+      setStatusMessage('El TPV ya está vacío y listo para una nueva compra.');
       return;
     }
 
@@ -121,7 +121,7 @@ function App() {
         discount={discount}
         total={total}
         couponCode={couponCode}
-        onCouponChange={(event) => setCouponCode(event.target.value)}
+        onCouponChange={(event) => setCouponCode(event.target.value.toUpperCase())}
         onApplyCoupon={handleApplyCoupon}
         onReset={handleReset}
         statusMessage={statusMessage}

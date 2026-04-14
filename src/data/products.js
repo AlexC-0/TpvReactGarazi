@@ -16,7 +16,7 @@ import photoChicken from '../assets/photo-chicken.jpeg';
 
 export const products = [
   { id: 'apples', name: 'Manzanas', price: '€2.5/kg', unitPrice: 2.5, measurement: 'weight', image: photoApples, color: 'red' },
-  { id: 'bananas', name: 'Platanos', price: '€1.9/kg', unitPrice: 1.9, measurement: 'weight', image: photoBananas, color: 'yellow' },
+  { id: 'bananas', name: 'Plátanos', price: '€1.9/kg', unitPrice: 1.9, measurement: 'weight', image: photoBananas, color: 'yellow' },
   { id: 'bread', name: 'Pan', price: '€1.2', unitPrice: 1.2, measurement: 'unit', image: photoBread, color: 'orange' },
   { id: 'milk', name: 'Leche', price: '€1.5', unitPrice: 1.5, measurement: 'unit', image: photoMilk, color: 'blue' },
   { id: 'cheese', name: 'Queso', price: '€12/kg', unitPrice: 12, measurement: 'weight', image: photoCheese, color: 'amber' },
@@ -27,7 +27,7 @@ export const products = [
   { id: 'yogurt', name: 'Yogur', price: '€0.9', unitPrice: 0.9, measurement: 'unit', image: photoYogurt, color: 'purple' },
   { id: 'rice', name: 'Arroz', price: '€1.7', unitPrice: 1.7, measurement: 'unit', image: photoRice, color: 'gray' },
   { id: 'pasta', name: 'Pasta', price: '€1.3', unitPrice: 1.3, measurement: 'unit', image: photoPasta, color: 'yellow' },
-  { id: 'coffee', name: 'Cafe', price: '€3.9', unitPrice: 3.9, measurement: 'unit', image: photoCoffee, color: 'brown' },
+  { id: 'coffee', name: 'Café', price: '€3.9', unitPrice: 3.9, measurement: 'unit', image: photoCoffee, color: 'brown' },
   { id: 'water', name: 'Agua', price: '€0.8', unitPrice: 0.8, measurement: 'unit', image: photoWater, color: 'blue' },
   { id: 'chicken', name: 'Pollo', price: '€7.5/kg', unitPrice: 7.5, measurement: 'weight', image: photoChicken, color: 'pink' },
 ];
