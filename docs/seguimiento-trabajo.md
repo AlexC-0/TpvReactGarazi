@@ -57,6 +57,15 @@
 - se afinan nombres de productos y elementos del carrito para que la interfaz resulte mas fiel a la maqueta base
 - se mantiene intacta la logica ya implementada mientras se remata la presentacion final
 
+## 2026-04-15
+
+### Comprobacion final y cierre documental
+
+- se revisa el estado general del proyecto antes de la entrega
+- se corrige la presentacion del README para dejar una documentacion mas limpia
+- se crea un documento especifico de comprobacion final
+- se deja constancia de que el proyecto compila correctamente y cumple los puntos principales del trabajo
+
 ## Proximos registros
 
 Este documento recogera cada fase importante del desarrollo del TPV para dejar constancia del trabajo realizado en el tiempo.

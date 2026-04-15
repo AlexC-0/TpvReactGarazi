@@ -1,4 +1,4 @@
-# TpvReactGarazi
+﻿# TpvReactGarazi
 
 Proyecto independiente para desarrollar un TPV funcional con React manteniendo la apariencia del HTML y CSS entregados.
 
@@ -21,15 +21,25 @@ Proyecto independiente para desarrollar un TPV funcional con React manteniendo l
 - Git
 - GitHub para seguimiento de versiones
 
-## Estructura inicial
+## Estructura principal
 
 - `src/`: aplicación React
 - `src/assets/`: imágenes y recursos visuales
-- `docs/`: metodología y seguimiento del trabajo
+- `src/components/`: componentes de interfaz
+- `src/data/`: datos base de productos
+- `docs/`: metodología, seguimiento y comprobación final
 
 ## Puesta en marcha
 
 ```bash
 npm install
 npm run dev
+```
+
+## Validación final
+
+La aplicación compila correctamente con:
+
+```bash
+npm run build
 ```
