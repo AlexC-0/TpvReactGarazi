@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import CartPanel from './components/CartPanel.jsx';
 import ProductsPanel from './components/ProductsPanel.jsx';
 import { products } from './data/products.js';
@@ -94,6 +94,22 @@ function App() {
     setStatusMessage(`Cupón ${normalizedCoupon} aplicado correctamente.`);
   };
 
+  const handleRemoveItem = (itemId, itemName) => {
+    setCartItems((currentItems) => {
+      const updatedItems = currentItems.filter((item) => item.id !== itemId);
+
+      if (updatedItems.length === 0) {
+        setCouponCode('');
+        setDiscountRate(0);
+        setStatusMessage(`${itemName} se ha eliminado y el carrito ha quedado vacío.`);
+        return updatedItems;
+      }
+
+      setStatusMessage(`${itemName} se ha eliminado del carrito.`);
+      return updatedItems;
+    });
+  };
+
   const handleReset = () => {
     if (cartItems.length === 0) {
       setStatusMessage('El TPV ya está vacío y listo para una nueva compra.');
@@ -124,6 +140,7 @@ function App() {
         onCouponChange={(event) => setCouponCode(event.target.value.toUpperCase())}
         onApplyCoupon={handleApplyCoupon}
         onReset={handleReset}
+        onRemoveItem={handleRemoveItem}
         statusMessage={statusMessage}
         formatCurrency={formatCurrency}
       />

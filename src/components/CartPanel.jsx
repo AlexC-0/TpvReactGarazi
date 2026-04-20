@@ -1,4 +1,4 @@
-﻿import CartItem from './CartItem.jsx';
+import CartItem from './CartItem.jsx';
 
 function CartPanel({
   cartItems,
@@ -9,6 +9,7 @@ function CartPanel({
   onCouponChange,
   onApplyCoupon,
   onReset,
+  onRemoveItem,
   statusMessage,
   formatCurrency,
 }) {
@@ -20,7 +21,9 @@ function CartPanel({
         {cartItems.length === 0 ? (
           <p className="cart-empty">Todavía no hay productos seleccionados.</p>
         ) : (
-          cartItems.map((item) => <CartItem key={item.id} item={item} formatCurrency={formatCurrency} />)
+          cartItems.map((item) => (
+            <CartItem key={item.id} item={item} formatCurrency={formatCurrency} onRemove={onRemoveItem} />
+          ))
         )}
       </div>
 
