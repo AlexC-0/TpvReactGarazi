@@ -56,16 +56,39 @@ function App() {
 
   const handleProductSelect = (product) => {
     const amount = normalizeAmount(product, quantityValue);
-    const newItem = {
-      id: `${product.id}-${Date.now()}-${Math.random().toString(16).slice(2, 8)}`,
-      name: product.name,
-      quantityLabel: formatQuantity(product, amount),
-      total: product.unitPrice * amount,
-    };
 
-    setCartItems((currentItems) => [...currentItems, newItem]);
+    setCartItems((currentItems) => {
+      const existingItem = currentItems.find((item) => item.id === product.id);
+
+      if (existingItem) {
+        const updatedAmount = existingItem.amount + amount;
+
+        return currentItems.map((item) =>
+          item.id === product.id
+            ? {
+                ...item,
+                amount: updatedAmount,
+                quantityLabel: formatQuantity(product, updatedAmount),
+                total: item.total + product.unitPrice * amount,
+              }
+            : item
+        );
+      }
+
+      return [
+        ...currentItems,
+        {
+          id: product.id,
+          name: product.name,
+          amount,
+          quantityLabel: formatQuantity(product, amount),
+          total: product.unitPrice * amount,
+        },
+      ];
+    });
+
     setQuantityValue(product.measurement === 'unit' ? `${Math.max(1, Math.round(amount))}` : `${amount}`);
-    setStatusMessage(`${product.name} se ha añadido al carrito.`);
+    setStatusMessage(`${product.name} se ha añadido o actualizado en el carrito.`);
   };
 
   const handleApplyCoupon = () => {
