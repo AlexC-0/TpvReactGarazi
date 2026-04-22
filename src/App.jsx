@@ -41,6 +41,7 @@ function formatQuantity(product, amount) {
 
 function App() {
   const [quantityValue, setQuantityValue] = useState('1');
+  const [selectedMeasurement, setSelectedMeasurement] = useState('weight');
   const [cartItems, setCartItems] = useState([]);
   const [couponCode, setCouponCode] = useState('');
   const [discountRate, setDiscountRate] = useState(0);
@@ -49,6 +50,27 @@ function App() {
   const subtotal = cartItems.reduce((sum, item) => sum + item.total, 0);
   const discount = subtotal * discountRate;
   const total = subtotal - discount;
+
+  const syncQuantityForMeasurement = (measurement) => {
+    setQuantityValue((currentValue) => {
+      const parsedValue = Number.parseFloat(currentValue);
+
+      if (Number.isNaN(parsedValue) || parsedValue <= 0) {
+        return '1';
+      }
+
+      if (measurement === 'unit') {
+        return `${Math.max(1, Math.round(parsedValue))}`;
+      }
+
+      return currentValue;
+    });
+  };
+
+  const handleMeasurementPreview = (measurement) => {
+    setSelectedMeasurement(measurement);
+    syncQuantityForMeasurement(measurement);
+  };
 
   const handleQuantityChange = (event) => {
     setQuantityValue(event.target.value);
@@ -87,6 +109,7 @@ function App() {
       ];
     });
 
+    setSelectedMeasurement(product.measurement);
     setQuantityValue(product.measurement === 'unit' ? `${Math.max(1, Math.round(amount))}` : `${amount}`);
     setStatusMessage(`${product.name} se ha añadido o actualizado en el carrito.`);
   };
@@ -143,6 +166,7 @@ function App() {
     setCouponCode('');
     setDiscountRate(0);
     setQuantityValue('1');
+    setSelectedMeasurement('weight');
     setStatusMessage('Compra finalizada. El TPV vuelve a estar listo.');
   };
 
@@ -151,8 +175,10 @@ function App() {
       <ProductsPanel
         products={products}
         quantityValue={quantityValue}
+        selectedMeasurement={selectedMeasurement}
         onQuantityChange={handleQuantityChange}
         onProductSelect={handleProductSelect}
+        onMeasurementPreview={handleMeasurementPreview}
       />
       <CartPanel
         cartItems={cartItems}
